@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cargill Solutions</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      color: #333;
+      line-height: 1.5;
+      padding-top: 60px; /* prevent overlap with header */
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      background: #008080;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 1rem;
+      z-index: 1000;
+    }
+    .logo {
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+    .hamburger {
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background: white;
+      border-radius: 2px;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background: #004d4d;
+      padding-top: 60px;
+      transition: left 0.3s ease;
+      z-index: 999;
+    }
+    .sidebar.active {
+      left: 0;
+    }
+    .sidebar ul {
+      list-style: none;
+    }
+    .sidebar ul li {
+      margin: 1rem 0;
+    }
+    .sidebar ul li a {
+      display: block;
+      padding: 0.8rem 1rem;
+      text-decoration: none;
+      color: white;
+      font-size: 1.1rem;
+    }
+    .sidebar ul li a:hover {
+      background: #006666;
+    }
+
+    /* Sections */
+    section {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    section h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #008080;
+    }
+
+    /* About */
+    .about-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+    }
+    .about-container img {
+      flex: 1 1 400px;
+      width: 100%;
+      border-radius: 8px;
+    }
+    .about-text {
+      flex: 1 1 400px;
+    }
+
+    /* Solutions */
+    .solutions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    .card-body {
+      padding: 1rem;
+    }
+    .card-body h3 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+      color: #222;
+    }
+    .card-body p {
+      margin-bottom: 0;
+      line-height: 1.5;
+      color: #555;
+    }
+
+    /* Footer */
+    footer {
+      background: #008080;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">Cargill</div>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+
+  <!-- Sidebar -->
+  <nav class="sidebar" id="sidebar">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#solutions">Solutions</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+<!-- Home -->
+<section id="home">
+  <h2>Home</h2>
+  <p style="text-align:center;">Welcome to Cargill Solutions. We provide innovative services in agriculture, food, and sustainability.</p>
+</section>
+
+  <!-- About -->
+  <section id="about">
+    <h2>About Us</h2>
+    <div class="about-container">
+      <img src="images/about.jpg" alt="About Cargill">
+      <div class="about-text">
+        <p>We provide world-class solutions in agriculture, nutrition, and sustainability, supporting global food companies and local communities alike. With a commitment to innovation, we ensure safe, responsible, and sustainable practices in everything we do.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions -->
+  <section id="solutions">
+    <h2>Our Solutions</h2>
+    <div class="solutions-grid">
+
+      <div class="card">
+        <img src="images/crop.jpg" alt="Crop & Ingredients">
+        <div class="card-body">
+          <h3>Crop & Ingredients</h3>
+          <p>High-quality crops and ingredient solutions tailored to global food companies and local markets.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/animal.jpg" alt="Animal Nutrition">
+        <div class="card-body">
+          <h3>Animal Nutrition</h3>
+          <p>Science-backed feed and nutrition programs to improve animal health and farm productivity.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/risk.jpg" alt="Risk & Insights">
+        <div class="card-body">
+          <h3>Risk & Insights</h3>
+          <p>Market insights, risk management and supply chain solutions for complex global trade.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/processing.jpg" alt="Food Processing">
+        <div class="card-body">
+          <h3>Food Processing</h3>
+          <p>End-to-end processing and ingredient services to help partners innovate and scale.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/sustainability.jpg" alt="Sustainability">
+        <div class="card-body">
+          <h3>Sustainability</h3>
+          <p>Commitment to sustainable practices that protect the planet and support future generations.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p style="text-align:center; max-width:800px; margin:auto;">
+      Have questions? Reach out via email at <a href="mailto:adebiyiadedolapo23@gmail.com">adebiyiadedolapo23@gmail.com</a> or call us at +234 812 499 0821.
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Cargill. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    const sidebar = document.getElementById("sidebar");
+    const hamburger = document.getElementById("hamburger");
+    const links = document.querySelectorAll(".sidebar a");
+
+    // Toggle sidebar with hamburger
+    hamburger.addEventListener("click", () => {
+      sidebar.classList.toggle("active");
+    });
+
+    // Close sidebar when clicking a link
+    links.forEach(link => {
+      link.addEventListener("click", () => {
+        sidebar.classList.remove("active");
+      });
+    });
+
+    // Close sidebar when clicking outside
+    document.addEventListener("click", (e) => {
+      if (
+        sidebar.classList.contains("active") &&
+        !sidebar.contains(e.target) &&
+        !hamburger.contains(e.target)
+      ) {
+        sidebar.classList.remove("active");
+      }
+    });
+  </script>
+</body>
+</html>
